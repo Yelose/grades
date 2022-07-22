@@ -36,6 +36,29 @@ npm run lint
 
 </details>
 
+<details><summary>Exercise requirements</summary>
+ 
+## Exercise to practice with Vue.
+
+* Requirements:
+  * Design an app that records student grades. 
+  * The app should have two views as shown in the [figma layout](https://www.figma.com/file/AZLLzHiUAiPLiETDMCm7rk/Vue---Bolet%C3%ADn-de-notas). 
+  * In the view where the qualifications should be listed, you have two possible options, choose the one you like best or start with the first and then try the second option.
+  * Remember that the note must be numerical but in the qualifications they must be shown according to the scale.
+  * Minimum 3 subjects.
+  * Scale:
+    * 0-3: Very poor
+    * 3-5: Insufficient
+    * 5-6: Enough
+    * 6-7: Good
+    * 7-9: notable
+    * 9-10: Outstanding
+ 
+ NOTE: Remember that if you think of something to improve it is always welcome.
+ 
+</details>
+
+
 <details><summary>User Flow</summary>
  
 ```mermaid
