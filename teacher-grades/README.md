@@ -1,14 +1,8 @@
+<details><summary>Using Vue</summary>
+
 # teacher-grades
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+This website is made with Vue 3
 
 ## Project Setup
 
@@ -39,3 +33,60 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+</details>
+
+<details><summary>User Flow</summary>
+ 
+```mermaid
+  
+   graph LR
+
+    subgraph VIEWS
+        home(Home View)
+        home-->goHome([go to app button])
+        clickHome{click}
+        goHome-->clickHome-->grades
+
+        subgraph GRADES 
+        grades(Grades View)
+        store--show data--->grades
+            subgraph FORM 
+                formComponent(Form Component)
+                formComponent-->name
+                formComponent-->subject
+                formComponent-->grade
+                name[/Student Name input/]
+                name-->exists
+                exists[[exists?]]
+                exists--no-->addNewStudent(Add new student)
+                exists--yes-->allFilled
+                subject[/Subject option input/]
+                subject-->subjectSelected
+                subjectSelected([Subject Selected?])
+                subjectSelected--no--->msg2
+                subjectSelected--yes-->allFilled
+                msg2[Please select a subject]
+                grade[/Grade input/]
+                gradeFilled([filled as number 0-100?])
+                grade-->gradeFilled
+                gradeFilled--no-->msg1[please write a number from 0 to 100]
+                gradeFilled--yes-->convertToString
+                convertToString[\convert grade to A-F/]-->allFilled
+                allFilled[all fields filled]
+                allFilled--yes-->addToStore
+            end  
+            subgraph Store
+                store[(Store)]
+                store-->allFilled
+                addToStore{add data}
+                addToStore--to current student-->store
+                addNewStudent-->store
+            end  
+        end        
+    end            
+
+  
+```
+  
+</details>
